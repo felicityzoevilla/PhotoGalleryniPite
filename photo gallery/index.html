@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery Memories ni Pite</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-dark">
+  <div class="container">
+    <span class="navbar-brand mb-0">Zoe's Archive Memories</span>
+    <a class="btn btn-sm btn-outline-light" href="#gallery">View gallery</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <h1>Memories treasured within me.</h1>
+    <p class="mt-3">A collection of the moments that made me happiest, with a note on why each one matters. Click any photo to see it larger.</p>
+  </div>
+</header>
+
+<main class="container pb-5" id="gallery">
+  <div class="row g-4" id="grid"></div>
+</main>
+
+<!-- Lightbox -->
+<div class="modal fade" id="lightbox" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <img id="lbImg" class="img-fluid" alt="">
+      <div class="modal-body">
+        <h5 id="lbTitle"></h5>
+        <p class="mb-0" id="lbWhy"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="py-4">
+  <div class="container small">Zoe's Archive Memories © 2026. All Rights Reserved.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
