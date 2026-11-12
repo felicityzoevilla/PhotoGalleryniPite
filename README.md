@@ -4,7 +4,7 @@ A responsive photo gallery website that showcases my happiest moments in life. E
 
 ## Features
 
-- **moments** a photo, year, description and the reason it matters
+- **Moments**: a photo, year, description and the reason it matters
 - **Responsive layout** that adapts from phones to large screens using the Bootstrap grid
 - **Click-to-enlarge lightbox** built with the Bootstrap modal
 - **Modern hover effects**: cards lift with a soft box shadow, photos zoom, and an accent bar slides in
