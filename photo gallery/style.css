@@ -7,8 +7,8 @@
   --shadow-lg:0 12px 28px rgba(34,48,60,.18), 0 24px 48px rgba(31,111,120,.18);
 }
 
-html { 
-    scroll-behavior:smooth; 
+html {
+  scroll-behavior:smooth;
 }
 
 body {
@@ -44,19 +44,50 @@ h1, h2, h5, .navbar-brand {
   box-shadow:0 6px 14px rgba(224,165,38,.4);
 }
 
-.hero { 
-    padding:5rem 0 3rem; 
+.hero {
+  padding:5rem 0 3rem;
 }
 
 .hero h1 {
   font-size:clamp(2.4rem,7vw,4.5rem);
   font-weight:700;
   line-height:1.05;
+
+  /* gradient text */
+  background:linear-gradient(90deg, var(--ink), var(--sea), var(--sun), var(--sea), var(--ink));
+  background-size:300% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+
+  /* entrance, then slow color flow */
+  animation:
+    titleIn 1s cubic-bezier(.2,.7,.2,1) both,
+    titleFlow 8s ease-in-out 1s infinite alternate;
+  transition:letter-spacing .4s ease, transform .4s ease;
+  cursor:default;
+}
+
+.hero h1:hover {
+  letter-spacing:.01em;
+  transform:translateX(6px);
 }
 
 .hero p {
   max-width:36rem;
   font-size:1.15rem;
+  animation:titleIn 1s cubic-bezier(.2,.7,.2,1) .35s both;
+}
+
+@keyframes titleIn {
+  from { opacity:0; transform:translateY(28px); filter:blur(6px); }
+  to   { opacity:1; transform:translateY(0);    filter:blur(0); }
+}
+
+@keyframes titleFlow {
+  from { background-position:0% 50%; }
+  to   { background-position:100% 50%; }
 }
 
 .moment {
@@ -85,7 +116,9 @@ h1, h2, h5, .navbar-brand {
   filter:saturate(1.15) brightness(1.03);
 }
 
-.moment .card-body { position:relative; }
+.moment .card-body {
+  position:relative;
+}
 
 .moment .card-body::after {
   content:"";
@@ -96,8 +129,8 @@ h1, h2, h5, .navbar-brand {
   transition:width .45s ease;
 }
 
-.moment:hover .card-body::after { 
-    width:100%; 
+.moment:hover .card-body::after {
+  width:100%;
 }
 
 .moment .year {
@@ -107,12 +140,12 @@ h1, h2, h5, .navbar-brand {
   font-size:.9rem;
 }
 
-.moment .card-title { 
-    transition:color .3s ease; 
+.moment .card-title {
+  transition:color .3s ease;
 }
 
-.moment:hover .card-title { 
-    color:var(--sea); 
+.moment:hover .card-title {
+  color:var(--sea);
 }
 
 .why {
@@ -139,12 +172,11 @@ a:focus-visible, button:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { 
-    transition:none !important; 
-    animation:none !important; 
-}
-  html { 
-    scroll-behavior:auto; 
-} 
-
+  *, *::before, *::after {
+    transition:none !important;
+    animation:none !important;
+  }
+  html {
+    scroll-behavior:auto;
+  }
 }
